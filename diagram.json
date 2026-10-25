@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Madiha Firdose",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 29.4, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -73.6,
+      "left": 39.2,
+      "attrs": {}
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 320.8, "left": -7.38, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 236.4,
+      "left": -15.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -103.2,
+      "left": 347.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "ldr1:VCC", "uno:5", "red", [ "h0" ] ],
+    [ "ldr1:GND", "uno:GND.1", "black", [ "h38.4", "v66.8", "h-115.2" ] ],
+    [ "ldr1:AO", "uno:A0", "green", [ "h134.4", "v306.5", "h-124.8" ] ],
+    [ "bz1:2", "uno:4", "green", [ "v48", "h-144.4" ] ],
+    [ "bz1:1", "uno:GND.1", "green", [ "v19.2", "h-249.6", "v28.8" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v38.4", "h153.6" ] ],
+    [ "pir1:OUT", "uno:2", "green", [ "v19.2", "h201.46" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v-9.6", "h143.74" ] ]
+  ],
+  "dependencies": {}
+}
